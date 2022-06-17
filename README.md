@@ -1,4 +1,4 @@
-# HackingWithSwift
+# HackingWithSwift - 100 DAYS OF SWIFT
 Hacking with Swift Course by Paul Hudson, for details [Hacking with Swift 100 days challenge](https://hackingwithswift.com/100)
 
 ##### General Todo's
