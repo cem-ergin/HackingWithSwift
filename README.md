@@ -36,7 +36,7 @@ What I learn is;
 - UIActivityViewController
 - Share an item(Image, Text. Whatever. It's dynamic)
 
-###### Some challenges; 
+###### Some challenges of day 22; 
 - [x] Add the image name to your shared items. 
 
 *Just added file name to the list, next to image. Like this;*
@@ -76,4 +76,17 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 ```
 
 <img src="https://user-images.githubusercontent.com/30066961/174457759-2a6d04d7-2db5-44f1-87fa-5ff42944123a.png" width="30%">
+
+###### Day 23, Challenge
+- Challenge is
+1. Show the flags with their names and images
+2. Show detail screen of the flag that is fullscreen image of flag.
+3. Share flag with it's name.</br>
+- I will change the UI in the future. I am trying to give some padding between the cells for about literally 2 hours. That is too frustrating. I will leave it as it is for now. 
+
+|<img src = "https://user-images.githubusercontent.com/30066961/174459222-a4f7e207-1c3e-48fe-9070-e2d58b2bbe21.png" width = 30%>|<img src = "https://user-images.githubusercontent.com/30066961/174459242-399e13dc-1d85-46fe-bdad-b3ab98a3dd75.png" width = 30%>|<img src = "https://user-images.githubusercontent.com/30066961/174459244-540258ae-7a21-47bf-94da-570cb17d70d2.png" width = 30%>
+
+
+
+
 
