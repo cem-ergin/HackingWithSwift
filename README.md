@@ -43,6 +43,21 @@ What I learn is;
 ```swift
 let vc = UIActivityViewController(activityItems: [image, "This is my image name"], applicationActivities: [])
 ```
-- [ ] Go back to project 1 and add a bar button item to the main view controller that recommends the 
-app.
+- [x] Go back to project 1 and add a bar button item to the main view controller that recommends the 
+app.</br>
+*Added UIBarButtonItem and the function
+```swift
+navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+```
+```swift
+  @objc func shareTapped (){
+        let appUrl = "You must try this app! https://github.com/cem-ergin/HackingWithSwift"
+        let vc = UIActivityViewController(activityItems: [appUrl], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem  = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
+```
+
+<img src="https://user-images.githubusercontent.com/30066961/174457463-b167c164-a5cb-4a37-9568-7c1c042ba791.png" width="45%">
+
 - [ ] Go back to project 2 and add a right bar button item that shows their score whenever it's tapped.
