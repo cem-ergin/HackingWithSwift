@@ -18,7 +18,9 @@ class DetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-        
+
+        imageView.backgroundColor = .systemGray6
+
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
         }
@@ -43,20 +45,9 @@ class DetailViewController: UIViewController {
             return
         }
         
-        let vc = UIActivityViewController(activityItems: [image, "This is my image name"], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [image, selectedImage!.capitalized], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem  = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -16,17 +16,9 @@ class ViewController: UITableViewController {
         
         title = "Social Media"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
-        
-        for item in items {
-            if (item.hasPrefix("nssl")){
-                pictures.append(item)
-            }
-        }
-        pictures.sort()
+        tableView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+                
+        pictures = ["estonia","france","germany","ireland","italy","monaco","nigeria","poland","russia","spain","uk","us"]
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,8 +26,11 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let pictureName = pictures[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        cell.textLabel?.text = pictures[indexPath.row]
+        cell.textLabel?.text = pictureName
+        cell.imageView?.image = UIImage(named: pictureName)
+        
         return cell
     }
     
@@ -45,7 +40,9 @@ class ViewController: UITableViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-
-
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
 }
 
