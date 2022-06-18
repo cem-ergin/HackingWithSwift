@@ -45,7 +45,7 @@ let vc = UIActivityViewController(activityItems: [image, "This is my image name"
 ```
 - [x] Go back to project 1 and add a bar button item to the main view controller that recommends the 
 app.</br>
-*Added UIBarButtonItem and the function
+*Added UIBarButtonItem and the function*
 ```swift
 navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
 ```
@@ -60,4 +60,20 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action
 
 <img src="https://user-images.githubusercontent.com/30066961/174457463-b167c164-a5cb-4a37-9568-7c1c042ba791.png" width="30%">
 
-- [ ] Go back to project 2 and add a right bar button item that shows their score whenever it's tapped.
+- [x] Go back to project 2 and add a right bar button item that shows their score whenever it's tapped.</br>
+*Added UIBarButtonItem and the function to ViewController*
+```swift
+navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showScore))
+```
+```swift
+     @objc func showScore(){
+        let ac = UIAlertController(title: "Your score", message: "Your current score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(ac) -> Void in
+            print("showScore handler")
+        }))
+        present(ac, animated: true)
+    }
+```
+
+<img src="https://user-images.githubusercontent.com/30066961/174457759-2a6d04d7-2db5-44f1-87fa-5ff42944123a.png" width="30%">
+
