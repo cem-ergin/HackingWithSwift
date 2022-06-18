@@ -29,3 +29,15 @@ What I learn is;
 - Actions
 - UIAlertController
 - present()
+
+##### 2022-06-18 SAT
+###### Day 22 is done
+- UIBarButtonItem
+- UIActivityViewController
+- Share an item(Image, Text. Whatever. It's dynamic)
+
+###### Some challenges; 
+- [ ] Add the image name to your shared items.
+- [ ] Go back to project 1 and add a bar button item to the main view controller that recommends the 
+app.
+- [ ] Go back to project 2 and add a right bar button item that shows their score whenever it's tapped.
