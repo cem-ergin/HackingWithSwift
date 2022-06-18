@@ -38,6 +38,7 @@ What I learn is;
 
 ###### Some challenges; 
 - [x] Add the image name to your shared items. 
+
 *Just added file name to the list, next to image. Like this;*
 ```swift
 let vc = UIActivityViewController(activityItems: [image, "This is my image name"], applicationActivities: [])
