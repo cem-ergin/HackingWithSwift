@@ -58,6 +58,6 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action
     }
 ```
 
-<img src="https://user-images.githubusercontent.com/30066961/174457463-b167c164-a5cb-4a37-9568-7c1c042ba791.png" width="45%">
+<img src="https://user-images.githubusercontent.com/30066961/174457463-b167c164-a5cb-4a37-9568-7c1c042ba791.png" width="30%">
 
 - [ ] Go back to project 2 and add a right bar button item that shows their score whenever it's tapped.
