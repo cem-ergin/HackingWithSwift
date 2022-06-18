@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showScore))
+        
         countries.append("estonia")
         countries.append("france")
         countries.append("germany")
@@ -74,6 +76,13 @@ class ViewController: UIViewController {
         present(ac, animated: true)
     }
     
+    @objc func showScore(){
+        let ac = UIAlertController(title: "Your score", message: "Your current score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(ac) -> Void in
+            print("showScore handler")
+        }))
+        present(ac, animated: true)
+    }
 
 
 }
