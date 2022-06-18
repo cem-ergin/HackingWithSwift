@@ -37,7 +37,11 @@ What I learn is;
 - Share an item(Image, Text. Whatever. It's dynamic)
 
 ###### Some challenges; 
-- [ ] Add the image name to your shared items.
+- [x] Add the image name to your shared items.
+Just added file name to the list, next to image. Like this;
+```swift
+let vc = UIActivityViewController(activityItems: [image, "This is my image name"], applicationActivities: [])
+```
 - [ ] Go back to project 1 and add a bar button item to the main view controller that recommends the 
 app.
 - [ ] Go back to project 2 and add a right bar button item that shows their score whenever it's tapped.
