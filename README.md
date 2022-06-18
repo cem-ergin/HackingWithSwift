@@ -37,8 +37,8 @@ What I learn is;
 - Share an item(Image, Text. Whatever. It's dynamic)
 
 ###### Some challenges; 
-- [x] Add the image name to your shared items.
-Just added file name to the list, next to image. Like this;
+- [x] Add the image name to your shared items. 
+*Just added file name to the list, next to image. Like this;*
 ```swift
 let vc = UIActivityViewController(activityItems: [image, "This is my image name"], applicationActivities: [])
 ```
