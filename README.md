@@ -145,20 +145,9 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 
 <img src = "https://user-images.githubusercontent.com/30066961/174487308-ca325b63-7323-4169-8853-1a163d53a46c.png" width = 30%>
 
-- [x] Try making two new toolbar items with the titles Back and Forward. You should make them use `webView.goBack` and `webView.goForward`
-      <br>
-      _Created two UIBarButtonItem called goBack and goForward and I add them to toolbarItems with one extra spacer between goForward and refresh button._
+- [x] Try making two new toolbar items with the titles Back and Forward. You should make them use `webView.goBack` and `webView.goForward`<br>
+*Created two UIBarButtonItem called goBack and goForward and I add them to toolbarItems with one extra spacer between goForward and refresh button.*
 
-```swift
-    let goBack = UIBarButtonItem(barButtonSystemItem: .rewind, target: webView,action: #selector(webView.goBack))
-    let goForward = UIBarButtonItem(barButtonSystemItem: .fastForward, target:webView, action: #selector(webView.goForward))
-```
-
-```swift
-    toolbarItems = [progressButton, spacer, goBack, goForward, spacer, refresh]
-```
-
-<!--
-<img src = "https://user-images.githubusercontent.com/30066961/174487321-202cccb7-5957-406b-a8cd-45e41cf2e740.png" width = 30%> -->
-
-- [ ] Try changing the initial view controller to a table view like in project 1, where users can choose their website from a list rather than just having the first in the array loaded up front.
+- [x] Try changing the initial view controller to a table view like in project 1, where users can choose their website from a list rather than just having the first in the array loaded up front.<br>
+*TODO: Will explain tomorrow. Need to go now*<br>
+<img src = "https://user-images.githubusercontent.com/30066961/174504389-b6e4321c-b7fa-477d-98bb-90c32131278f.png" width = 30%> <img src = "https://user-images.githubusercontent.com/30066961/174504404-6062b487-d2b6-458b-93d4-2220ba100972.png" width = 30%>
