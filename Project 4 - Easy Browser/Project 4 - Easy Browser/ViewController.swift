@@ -12,6 +12,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var progressView: UIProgressView!
     var websites = ["apple.com","hackingwithswift.com","flutter.dev"]
+    var website: String?
     
     override func loadView() {
         webView = WKWebView()
@@ -21,7 +22,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -38,7 +38,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        guard let url = URL(string: "https://www.\(websites.last!)") else {
+        guard let website = website else {
+            return
+        }
+
+        guard let url = URL(string: "https://www.\(website)") else {
             print("Houston, we have a problem!")
             return
         }
