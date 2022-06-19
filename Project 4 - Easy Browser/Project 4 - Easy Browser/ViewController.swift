@@ -26,12 +26,14 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
-        
+        let goBack = UIBarButtonItem(barButtonSystemItem: .rewind, target: webView, action: #selector(webView.goBack))
+        let goForward = UIBarButtonItem(barButtonSystemItem: .fastForward, target: webView, action: #selector(webView.goForward))
+
         progressView = UIProgressView(progressViewStyle: .default)
         progressView.sizeToFit()
         let progressButton = UIBarButtonItem(customView: progressView)
         
-        toolbarItems = [progressButton, spacer, refresh]
+        toolbarItems = [progressButton, spacer, goBack, goForward, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -53,6 +55,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(ac, animated: true)
     }
+    
     
     func openPage(action: UIAlertAction){
         guard let actionTitle = action.title else {return}
@@ -80,8 +83,15 @@ class ViewController: UIViewController, WKNavigationDelegate {
                     return
                 }
             }
+            showAlert(host: host)
         }
         decisionHandler(.cancel)
+    }
+    
+    func showAlert(host: String){
+        let ac = UIAlertController(title: "Unsupported website", message: "You can't open the host \(host)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(ac, animated: true)
     }
 }
 
