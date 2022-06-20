@@ -149,8 +149,12 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
       _Created two UIBarButtonItem called goBack and goForward and I add them to toolbarItems with one extra spacer between goForward and refresh button._
 
 - [x] Try changing the initial view controller to a table view like in project 1, where users can choose their website from a list rather than just having the first in the array loaded up front.<br>
-      _TODO: Will explain tomorrow. Need to go now_<br>
-      <img src = "https://user-images.githubusercontent.com/30066961/174504389-b6e4321c-b7fa-477d-98bb-90c32131278f.png" width = 30%> <img src = "https://user-images.githubusercontent.com/30066961/174504404-6062b487-d2b6-458b-93d4-2220ba100972.png" width = 30%>
+      *I used programmatically view for this challenge. This tutorial from Martin Lasek helped a lot: https://martinlasek.medium.com/tutorial-adding-a-uitableview-programmatically-433cb17ae07d<br>Please don't forget giving tableView delegate and dataSource to self (tableView you created). I forgot and I worked ~2 hours to find what cause the error. It was these 2 lines.*
+```swift
+  tableView.dataSource = self // you can't see tableView items if you don't give dataSource itself
+  tableView.delegate = self // you can't click tableView if you don't give delegate itself
+```
+<img src = "https://user-images.githubusercontent.com/30066961/174504389-b6e4321c-b7fa-477d-98bb-90c32131278f.png" width = 30%> <img src = "https://user-images.githubusercontent.com/30066961/174504404-6062b487-d2b6-458b-93d4-2220ba100972.png" width = 30%>
 
 ## 2022-06-20 MON
 
@@ -162,29 +166,46 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 - Inserting rows to Table View
 - Closures
 
-- [ ] Disallow answers that are shorter than three letters or are just our start word
+- [x] Disallow answers that are shorter than three letters or are just our start word<br>
+*Created 2 functions*
+```swift
+    if (!isAcceptableLength(word: lowerAnswer)){
+              showErrorMessage(title: "Word length is not enough", description:  "Word length need to be greater than 3")
+              return
+          }
+    if (!isWordEqualsTitle(word: lowerAnswer)){
+              showErrorMessage(title: "Word not possible", description:  "You can't enter the same word as title")
+            return
+        }
+    func isAcceptableLength(word: String) -> Bool {
+        return word.count > 3
+    }
 
+    func isWordEqualsTitle(word: String) -> Bool {
+        guard let title = title else { return false }
+        return word != title
+    }
+```
+<img src = "https://user-images.githubusercontent.com/30066961/174685481-6d5515de-0aee-4c43-814c-bf24e946eefe.png" width = 30%> <img src = "https://user-images.githubusercontent.com/30066961/174685608-a0f61a1a-4b4d-497b-a3c3-32142c918c1b.png" width = 30%> <br>
 - [x] Refactor all the else statements we just added so that they call a new method called showErrorMessage()<br>
-      _This is already done_
-
 ```swift
  func submit(_ answer: String){
         let lowerAnswer = answer.lowercased()
 
         if (!isReal(word: lowerAnswer)){
-            showAlert(title: "Word not recognized", description:  "You can't just make that up, you know")
+            showErrorMessage(title: "Word not recognized", description:  "You can't just make that up, you know")
             return
         }
         if (!isOriginal(word: lowerAnswer)){
-            showAlert(title: "Word already used", description:  "Be more original!")
+            showErrorMessage(title: "Word already used", description:  "Be more original!")
             return
         }
         if (!isPossible(word: lowerAnswer)){
             guard let title = title else {
-                self.showAlert(title: "Word not possible", description:  "You can't spell that from given word")
+                self.showErrorMessage(title: "Word not possible", description:  "You can't spell that from given word")
                 return
             }
-            showAlert(title: "Word not possible", description:  "You can't spell that word from \(title.lowercased())")
+            showErrorMessage(title: "Word not possible", description:  "You can't spell that word from \(title.lowercased())")
             return
         }
 
@@ -193,11 +214,17 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
-    func showAlert(title: String, description: String){
+    func showErrorMessage(title: String, description: String){
         let ac = UIAlertController(title: title, message: description, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
 ```
 
-- [ ] Add a left button item that calls startGame(), so users can restart wih a new word whenever they want to
+- [x] Add a left button item that calls startGame(), so users can restart wih a new word whenever they want to <br>
+*I added leftBarButtonItem to navigationItem and point it to startGame function we already created before. After that I just needed to add @objc to the start of the func keyword. Because UIBarButtonItem selector function need to be tagged @objc*
+```swift
+navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, targetself, action: #selector(startGame))
+
+@objc func startGame(){
+```
