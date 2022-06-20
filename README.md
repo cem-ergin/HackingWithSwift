@@ -55,7 +55,7 @@ let vc = UIActivityViewController(activityItems: [image, "This is my image name"
 ```
 
 - [x] Go back to project 1 and add a bar button item to the main view controller that recommends the
-      app.</br>
+      app.</br><br>
       _Added UIBarButtonItem and the function_
 
 ```swift
@@ -73,7 +73,7 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action
 
 <img src="https://user-images.githubusercontent.com/30066961/174457463-b167c164-a5cb-4a37-9568-7c1c042ba791.png" width="30%">
 
-- [x] Go back to project 2 and add a right bar button item that shows their score whenever it's tapped.</br>
+- [x] Go back to project 2 and add a right bar button item that shows their score whenever it's tapped.</br><br>
       _Added UIBarButtonItem and the function to ViewController_
 
 ```swift
@@ -117,7 +117,7 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 
 #### Day 26 Challenges
 
-- [x] If users try to visit a URL that isn’t allowed, show an alert saying it’s blocked<br>
+- [x] If users try to visit a URL that isn’t allowed, show an alert saying it’s blocked<br><br>
       _I created a UIAlertController to show alert and I put it inside of function. Finally I called the function inside webView decision handler_<br>
 
 ```swift
@@ -145,10 +145,10 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 
 <img src = "https://user-images.githubusercontent.com/30066961/174487308-ca325b63-7323-4169-8853-1a163d53a46c.png" width = 30%>
 
-- [x] Try making two new toolbar items with the titles Back and Forward. You should make them use `webView.goBack` and `webView.goForward`<br>
+- [x] Try making two new toolbar items with the titles Back and Forward. You should make them use `webView.goBack` and `webView.goForward`<br><br>
       _Created two UIBarButtonItem called goBack and goForward and I add them to toolbarItems with one extra spacer between goForward and refresh button._
 
-- [x] Try changing the initial view controller to a table view like in project 1, where users can choose their website from a list rather than just having the first in the array loaded up front.<br>
+- [x] Try changing the initial view controller to a table view like in project 1, where users can choose their website from a list rather than just having the first in the array loaded up front.<br><br>
       *I used programmatically view for this challenge. This tutorial from Martin Lasek helped a lot: https://martinlasek.medium.com/tutorial-adding-a-uitableview-programmatically-433cb17ae07d<br>Please don't forget giving tableView delegate and dataSource to self (tableView you created). I forgot and I worked ~2 hours to find what cause the error. It was these 2 lines.*
 ```swift
   tableView.dataSource = self // you can't see tableView items if you don't give dataSource itself
@@ -166,7 +166,7 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 - Inserting rows to Table View
 - Closures
 
-- [x] Disallow answers that are shorter than three letters or are just our start word<br>
+- [x] Disallow answers that are shorter than three letters or are just our start word<br><br>
 *Created 2 functions*
 ```swift
     if (!isAcceptableLength(word: lowerAnswer)){
@@ -221,7 +221,7 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
     }
 ```
 
-- [x] Add a left button item that calls startGame(), so users can restart wih a new word whenever they want to <br>
+- [x] Add a left button item that calls startGame(), so users can restart wih a new word whenever they want to <br><br>
 *I added leftBarButtonItem to navigationItem and point it to startGame function we already created before. After that I just needed to add @objc to the start of the func keyword. Because UIBarButtonItem selector function need to be tagged @objc*
 ```swift
 navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, targetself, action: #selector(startGame))
