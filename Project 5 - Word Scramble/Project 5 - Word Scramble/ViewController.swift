@@ -16,6 +16,7 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(startGame))
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt"){
             if let startWords = try? String(contentsOf: startWordsURL){
                 allWords = startWords.components(separatedBy: "\n")
@@ -29,7 +30,7 @@ class ViewController: UITableViewController {
         startGame()
     }
     
-    func startGame(){
+    @objc func startGame(){
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
@@ -62,6 +63,10 @@ class ViewController: UITableViewController {
     func submit(_ answer: String){
         let lowerAnswer = answer.lowercased()
         
+        if (!isAcceptableLength(word: lowerAnswer)){
+            showErrorMessage(title: "Word length is not enough", description:  "Word length need to be greater than 3")
+            return
+        }
         if (!isReal(word: lowerAnswer)){
             showErrorMessage(title: "Word not recognized", description:  "You can't just make that up, you know")
             return
@@ -76,6 +81,10 @@ class ViewController: UITableViewController {
                 return
             }
             showErrorMessage(title: "Word not possible", description:  "You can't spell that word from \(title.lowercased())")
+            return
+        }
+        if (!isWordEqualsTitle(word: lowerAnswer)){
+            showErrorMessage(title: "Word not possible", description:  "You can't enter the same word as title")
             return
         }
         
@@ -106,6 +115,15 @@ class ViewController: UITableViewController {
         let range = NSRange(location:0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isAcceptableLength(word: String) -> Bool {
+        return word.count > 3
+    }
+    
+    func isWordEqualsTitle(word: String) -> Bool {
+        guard let title = title else { return false }
+        return word != title
     }
     
     func showErrorMessage(title: String, description: String){
