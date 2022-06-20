@@ -146,8 +146,58 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 <img src = "https://user-images.githubusercontent.com/30066961/174487308-ca325b63-7323-4169-8853-1a163d53a46c.png" width = 30%>
 
 - [x] Try making two new toolbar items with the titles Back and Forward. You should make them use `webView.goBack` and `webView.goForward`<br>
-*Created two UIBarButtonItem called goBack and goForward and I add them to toolbarItems with one extra spacer between goForward and refresh button.*
+      _Created two UIBarButtonItem called goBack and goForward and I add them to toolbarItems with one extra spacer between goForward and refresh button._
 
 - [x] Try changing the initial view controller to a table view like in project 1, where users can choose their website from a list rather than just having the first in the array loaded up front.<br>
-*TODO: Will explain tomorrow. Need to go now*<br>
-<img src = "https://user-images.githubusercontent.com/30066961/174504389-b6e4321c-b7fa-477d-98bb-90c32131278f.png" width = 30%> <img src = "https://user-images.githubusercontent.com/30066961/174504404-6062b487-d2b6-458b-93d4-2220ba100972.png" width = 30%>
+      _TODO: Will explain tomorrow. Need to go now_<br>
+      <img src = "https://user-images.githubusercontent.com/30066961/174504389-b6e4321c-b7fa-477d-98bb-90c32131278f.png" width = 30%> <img src = "https://user-images.githubusercontent.com/30066961/174504404-6062b487-d2b6-458b-93d4-2220ba100972.png" width = 30%>
+
+## 2022-06-20 MON
+
+#### Day 27,28,29 is done without challenges
+
+- Reloading Table Views
+- Strings and UTF16
+- Text input from user
+- Inserting rows to Table View
+- Closures
+
+- [ ] Disallow answers that are shorter than three letters or are just our start word
+
+- [x] Refactor all the else statements we just added so that they call a new method called showErrorMessage()<br>
+      _This is already done_
+
+```swift
+ func submit(_ answer: String){
+        let lowerAnswer = answer.lowercased()
+
+        if (!isReal(word: lowerAnswer)){
+            showAlert(title: "Word not recognized", description:  "You can't just make that up, you know")
+            return
+        }
+        if (!isOriginal(word: lowerAnswer)){
+            showAlert(title: "Word already used", description:  "Be more original!")
+            return
+        }
+        if (!isPossible(word: lowerAnswer)){
+            guard let title = title else {
+                self.showAlert(title: "Word not possible", description:  "You can't spell that from given word")
+                return
+            }
+            showAlert(title: "Word not possible", description:  "You can't spell that word from \(title.lowercased())")
+            return
+        }
+
+        usedWords.insert(answer, at: 0)
+        let indexPath = IndexPath(row:0, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+    }
+
+    func showAlert(title: String, description: String){
+        let ac = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+```
+
+- [ ] Add a left button item that calls startGame(), so users can restart wih a new word whenever they want to
