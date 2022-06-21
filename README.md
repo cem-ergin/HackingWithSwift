@@ -228,3 +228,10 @@ navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, t
 
 @objc func startGame(){
 ```
+
+## 2022-06-21 TUE
+
+#### Day 30 is done
+
+- Advanced Layout 101
+- Basics of Visual Format Language
