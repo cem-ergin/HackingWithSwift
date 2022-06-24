@@ -149,11 +149,13 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
       _Created two UIBarButtonItem called goBack and goForward and I add them to toolbarItems with one extra spacer between goForward and refresh button._
 
 - [x] Try changing the initial view controller to a table view like in project 1, where users can choose their website from a list rather than just having the first in the array loaded up front.<br><br>
-      *I used programmatically view for this challenge. This tutorial from Martin Lasek helped a lot: https://martinlasek.medium.com/tutorial-adding-a-uitableview-programmatically-433cb17ae07d<br>Please don't forget giving tableView delegate and dataSource to self (tableView you created). I forgot and I worked ~2 hours to find what cause the error. It was these 2 lines.*
+      _I used programmatically view for this challenge. This tutorial from Martin Lasek helped a lot: https://martinlasek.medium.com/tutorial-adding-a-uitableview-programmatically-433cb17ae07d<br>Please don't forget giving tableView delegate and dataSource to self (tableView you created). I forgot and I worked ~2 hours to find what cause the error. It was these 2 lines._
+
 ```swift
   tableView.dataSource = self // you can't see tableView items if you don't give dataSource itself
   tableView.delegate = self // you can't click tableView if you don't give delegate itself
 ```
+
 <img src = "https://user-images.githubusercontent.com/30066961/174504389-b6e4321c-b7fa-477d-98bb-90c32131278f.png" width = 30%> <img src = "https://user-images.githubusercontent.com/30066961/174504404-6062b487-d2b6-458b-93d4-2220ba100972.png" width = 30%>
 
 ## 2022-06-20 MON
@@ -167,7 +169,8 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 - Closures
 
 - [x] Disallow answers that are shorter than three letters or are just our start word<br><br>
-*Created 2 functions*
+      _Created 2 functions_
+
 ```swift
     if (!isAcceptableLength(word: lowerAnswer)){
               showErrorMessage(title: "Word length is not enough", description:  "Word length need to be greater than 3")
@@ -186,8 +189,11 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
         return word != title
     }
 ```
+
 <img src = "https://user-images.githubusercontent.com/30066961/174685481-6d5515de-0aee-4c43-814c-bf24e946eefe.png" width = 30%> <img src = "https://user-images.githubusercontent.com/30066961/174685608-a0f61a1a-4b4d-497b-a3c3-32142c918c1b.png" width = 30%> <br>
+
 - [x] Refactor all the else statements we just added so that they call a new method called showErrorMessage()<br>
+
 ```swift
  func submit(_ answer: String){
         let lowerAnswer = answer.lowercased()
@@ -222,7 +228,8 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookma
 ```
 
 - [x] Add a left button item that calls startGame(), so users can restart wih a new word whenever they want to <br><br>
-*I added leftBarButtonItem to navigationItem and point it to startGame function we already created before. After that I just needed to add @objc to the start of the func keyword. Because UIBarButtonItem selector function need to be tagged @objc*
+      _I added leftBarButtonItem to navigationItem and point it to startGame function we already created before. After that I just needed to add @objc to the start of the func keyword. Because UIBarButtonItem selector function need to be tagged @objc_
+
 ```swift
 navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, targetself, action: #selector(startGame))
 
@@ -250,4 +257,24 @@ Day off
 ### Day 31 is done
 
 - Equal height on child widgets
-- Anchors
+- Anchors<br>
+
+- [x] Try replacing the widthAnchor of our labels with leadingAnchor and trailingAnchor constraints, which more explicitly pin the label to the edges of its parent.<br>
+
+```swift
+label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+```
+
+- [x] Once you’ve completed the first challenge, try using the safeAreaLayoutGuide for those constraints. You can see if this is working by rotating to landscape, because the labels won’t go under the safe area.<br>
+
+```swift
+label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+```
+
+- [x] Try making the height of your labels equal to 1/5th of the main view, minus 10 for the spacing. This is a hard one, but I’ve included hints below!<br>
+
+```swift
+label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2, constant: -10).isActive = true
+```
