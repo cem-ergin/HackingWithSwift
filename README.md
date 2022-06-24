@@ -240,3 +240,14 @@ navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, t
 ## 2022-06-22 WED
 
 Day off
+
+## 2022-06-23 THU
+
+Day off
+
+## 2022-06-24 FRI
+
+### Day 31 is done
+
+- Equal height on child widgets
+- Anchors
