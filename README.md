@@ -300,6 +300,54 @@ label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, mu
 - UIStoryBoard
 - SceneDelegate
 
-- [ ] Add a Credits button to the top-right corner using UIBarButtonItem. When this is tapped, show an alert telling users the data comes from the We The People API of the Whitehouse.
-- [ ] Let users filter the petitions they see. This involves creating a second array of filtered items that contains only petitions matching a string the user entered. Use a UIAlertController with a text field to let them enter that string.
+[Go to Project 7 to see the challenge answers](https://github.com/cem-ergin/HackingWithSwift/tree/master/Project%207%20-%20Whitehouse%20Petitions)
+
+- [x] Add a Credits button to the top-right corner using UIBarButtonItem. When this is tapped, show an alert telling users the data comes from the We The People API of the Whitehouse.<br>
+```swift
+let showInfoButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showInfo))
+
+@objc func showInfo() {
+let ac = UIAlertController(title: "Credits", message: "All the data coming from 'We The People Api' of the Whitehouse", preferredStyle: .alert)
+ac.addAction(UIAlertAction(title: "OK", style: .default))
+present(ac, animated: true)
+}
+```
+- [x] Let users filter the petitions they see. This involves creating a second array of filtered items that contains only petitions matching a string the user entered. Use a UIAlertController with a text field to let them enter that string.<br>
+```swift
+let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(filter))
+navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
+```
+```swift
+@objc func filter() {
+        let ac = UIAlertController(title: "Filter", message: "Type something to search", preferredStyle: .alert)
+        ac.addTextField()
+        ac.addAction(UIAlertAction(title: "OK", style: .default) {
+            [weak ac] _ in
+            if let text = ac?.textFields?[0].text {
+                self.filterData(filterString: text)
+            }
+        })
+        ac.addAction(UIAlertAction(title: "Cancel", style: .default))
+        present(ac, animated: true)
+    }
+    
+    func filterData (filterString: String) {
+        if(filterString.isEmpty){
+            filteredPetitions = petitions
+        }else{
+            filteredPetitions = petitions.filter({ Petition in
+                return Petition.body.contains(filterString) || Petition.title.contains(filterString)
+            })
+        }
+        reloadData()
+    }
+    
+    func reloadData () {
+        navigationItem.leftBarButtonItem = filteredPetitions.count != petitions.count ? clearButton : nil
+        tableView.reloadData()
+    }
+```
+
 - [ ] Experiment with the HTML
+
+<img src = "https://user-images.githubusercontent.com/30066961/175790994-d5404ecc-2b5a-48bb-b791-01bc5069cb51.gif" width = 30%>
