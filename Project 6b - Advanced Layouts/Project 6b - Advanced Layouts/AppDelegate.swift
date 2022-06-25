@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Project 6b - Advanced Layouts
 //
-//  Created by CTW01856-Admin on 21/06/2022.
+//  Created by Cem Ergin on 21/06/2022.
 //
 
 import UIKit

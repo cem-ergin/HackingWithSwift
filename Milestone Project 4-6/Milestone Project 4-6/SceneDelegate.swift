@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Milestone Project 4-6
 //
-//  Created by CTW01856-Admin on 25/06/2022.
+//  Created by Cem Ergin on 25/06/2022.
 //
 
 import UIKit

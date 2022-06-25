@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Project 4 - Easy Browser
 //
-//  Created by CTW01856-Admin on 19/06/2022.
+//  Created by Cem Ergin on 19/06/2022.
 //
 
 import UIKit

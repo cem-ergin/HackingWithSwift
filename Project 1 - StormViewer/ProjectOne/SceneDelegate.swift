@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  ProjectOne
 //
-//  Created by CTW01856-Admin on 16/06/2022.
+//  Created by Cem Ergin on 16/06/2022.
 //
 
 import UIKit

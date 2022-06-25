@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Project 5 - Word Scramble
 //
-//  Created by CTW01856-Admin on 20/06/2022.
+//  Created by Cem Ergin on 20/06/2022.
 //
 
 import UIKit
