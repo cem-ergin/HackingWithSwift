@@ -43,8 +43,17 @@ class ViewController: UITableViewController {
     }
     
     @objc func clearItems(){
-        shoppingList.removeAll()
-        tableView.reloadData()
+        let ac = UIAlertController(title: "Delete the list", message: "Delete button will delete all the items in the list. Are you sure?", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive){
+            _ in
+            self.shoppingList.removeAll()
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(deleteAction)
+        ac.addAction(cancelAction)
+        present(ac, animated: true)
     }
 }
 
