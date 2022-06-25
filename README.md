@@ -351,3 +351,8 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 - [ ] Experiment with the HTML
 
 <img src = "https://user-images.githubusercontent.com/30066961/175790994-d5404ecc-2b5a-48bb-b791-01bc5069cb51.gif" width = 30%>
+
+### Day 36 is completed
+
+- Building app without storyboard
+- Making complex ui programmatically.
