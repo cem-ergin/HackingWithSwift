@@ -283,12 +283,8 @@ label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, mu
 
 ### Milestone project - day 32 is done
 
+[Go to ViewController.swift to see changes](https://github.com/cem-ergin/HackingWithSwift/blob/master/Milestone%20Project%204-6/Milestone%20Project%204-6/ViewController.swift)
+
 - [x] Create an app that lets people create a shopping list by adding items to a table view <br>
 
-<img src = "https://user-images.githubusercontent.com/30066961/175775215-edf2b5b2-0638-4d39-b5dd-f1ef82559ae1.png" width = 23%>
-<img src = "https://user-images.githubusercontent.com/30066961/175775194-365b4ecc-b79e-4da8-942d-52b43a0818ae.png" width = 23%> 
-<img src = "https://user-images.githubusercontent.com/30066961/175775392-8353c06a-a17d-4fff-9930-7a6ea1c10305.png" width = 23%> 
-
-
-
-
+<img src = "https://user-images.githubusercontent.com/30066961/175775215-edf2b5b2-0638-4d39-b5dd-f1ef82559ae1.png" width = 23%> <img src = "https://user-images.githubusercontent.com/30066961/175775194-365b4ecc-b79e-4da8-942d-52b43a0818ae.png" width = 23%> <img src = "https://user-images.githubusercontent.com/30066961/175775392-8353c06a-a17d-4fff-9930-7a6ea1c10305.png" width = 23%> 
