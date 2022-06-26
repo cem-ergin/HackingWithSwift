@@ -356,3 +356,8 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 
 - Building app without storyboard
 - Making complex ui programmatically.
+
+### Day 37 and 38 is completed. Project 8 is done
+
+- didSet property to update the value. It's like setState method on Flutter.
+- More dive into swift syntax. Replacing occurance in strings, for loops, .enumarated() etc.
