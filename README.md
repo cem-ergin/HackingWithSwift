@@ -352,6 +352,8 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 
 <img src = "https://user-images.githubusercontent.com/30066961/175790994-d5404ecc-2b5a-48bb-b791-01bc5069cb51.gif" width = 30%>
 
+## 2022-06-26 SUN
+
 ### Day 36 is completed
 
 - Building app without storyboard
@@ -361,3 +363,15 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 
 - didSet property to update the value. It's like setState method on Flutter.
 - More dive into swift syntax. Replacing occurance in strings, for loops, .enumarated() etc.
+
+### Day 39 and 40 is completed. Project 9 is done
+
+- GDC(DispatchQueue in main or background thread)
+- performSelector function for easier DispatchQueue
+- Quality of Service
+
+#### Project 9 challenges; 
+
+- [ ] Modify project 1 so that loading the list of NSSL images from our bundle happens in the background.
+- [ ] Modify project 8 so that loading and parsing a level takes place in the background.
+- [ ] Modify project 7 so that your filtering code takes place in the background.
