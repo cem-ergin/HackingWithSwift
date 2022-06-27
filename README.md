@@ -375,3 +375,7 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 - [ ] Modify project 1 so that loading the list of NSSL images from our bundle happens in the background.
 - [ ] Modify project 8 so that loading and parsing a level takes place in the background.
 - [ ] Modify project 7 so that your filtering code takes place in the background.
+
+## 2022-06-27 MON
+
+Day off
