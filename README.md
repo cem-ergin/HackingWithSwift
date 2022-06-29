@@ -379,3 +379,11 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 ## 2022-06-27 MON
 
 Day off
+
+## 2022-06-28 TUE
+
+Day off
+
+## 2022-06-29 WED
+
+Day off
