@@ -372,9 +372,12 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 
 #### Project 9 challenges; 
 
-- [ ] Modify project 1 so that loading the list of NSSL images from our bundle happens in the background.
-- [ ] Modify project 8 so that loading and parsing a level takes place in the background.
-- [ ] Modify project 7 so that your filtering code takes place in the background.
+- [x] Modify project 1 so that loading the list of NSSL images from our bundle happens in the background.<br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-7bfa7821455e405526ec7e2f83264a155bee7a33e3e467b9cb06cbc078e73f38)
+- [x] Modify project 8 so that loading and parsing a level takes place in the background.<br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-4a2fa5dfffece5f3b4d5eb3a25ce6688ee39983c34e7664cfeec5304c0d53970)
+- [x] Modify project 7 so that your filtering code takes place in the background.<br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-dfa15ad23ceddd7486d986b7c1954ded248c0662c792244ca5b338c6235f2877)
 
 ## 2022-06-27 MON
 
@@ -387,3 +390,7 @@ Day off
 ## 2022-06-29 WED
 
 Day off
+
+## 2022-06-30 WED
+
+Project 9 challenges are done. [All changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae)
