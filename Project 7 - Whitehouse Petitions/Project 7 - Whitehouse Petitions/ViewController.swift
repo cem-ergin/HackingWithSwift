@@ -49,7 +49,9 @@ class ViewController: UITableViewController {
         ac.addAction(UIAlertAction(title: "OK", style: .default) {
             [weak ac] _ in
             if let text = ac?.textFields?[0].text {
-                self.filterData(filterString: text)
+                DispatchQueue.global().async {
+                    self.filterData(filterString: text)
+                }
             }
         })
         ac.addAction(UIAlertAction(title: "Cancel", style: .default))
@@ -64,10 +66,11 @@ class ViewController: UITableViewController {
                 return Petition.body.contains(filterString) || Petition.title.contains(filterString)
             })
         }
-        reloadData()
+        
+        performSelector(onMainThread: #selector(reloadData), with: nil, waitUntilDone: false)
     }
     
-    func reloadData () {
+    @objc func reloadData () {
         navigationItem.leftBarButtonItem = filteredPetitions.count != petitions.count ? clearButton : nil
         tableView.reloadData()
     }

@@ -72,8 +72,6 @@ class ViewController: UITableViewController {
     @objc func reloadData () {
         navigationItem.leftBarButtonItem = filteredPetitions.count != petitions.count ? clearButton : nil
         tableView.reloadData()
-//        performSelector(onMainThread: #selector(leftBarButtonHandler), with: nil, waitUntilDone: false)
-//        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
     
     @objc func leftBarButtonHandler(){
