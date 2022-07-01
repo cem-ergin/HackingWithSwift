@@ -394,3 +394,11 @@ Day off
 ## 2022-06-30 WED
 
 Project 9 challenges are done. [All changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae)
+
+## 2022-06-31 THU
+
+Day off
+
+## 2022-07-01 FRI
+
+Milestone Project 7-9 Hangman created
