@@ -402,3 +402,7 @@ Day off
 ## 2022-07-01 FRI
 
 Milestone Project 7-9 Hangman created
+
+## 2022-07-02 SAT
+
+WORK-IN-PROGRESS: Milestone Project 7-9 Hangman 
