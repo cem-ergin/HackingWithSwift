@@ -406,3 +406,11 @@ Milestone Project 7-9 Hangman created
 ## 2022-07-02 SAT
 
 WORK-IN-PROGRESS: Milestone Project 7-9 Hangman 
+
+## 2022-07-03 MON
+
+Day off
+
+## 2022-07-04 TUE
+
+Milestone Project 7-9 Hangman is done
