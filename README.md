@@ -414,3 +414,11 @@ Day off
 ## 2022-07-04 TUE
 
 Milestone Project 7-9 Hangman is done
+
+## 2022-07-04 WED
+
+Project 10, Names to Faces is created.
+
+- UICollectionView
+- UICollectionViewController
+- UICollectionViewCell
