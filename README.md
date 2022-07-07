@@ -422,3 +422,16 @@ Project 10, Names to Faces is created.
 - UICollectionView
 - UICollectionViewController
 - UICollectionViewCell
+
+## 2022-07-05 THU
+
+Project 10, Names to Faces is completed.
+
+- UIImagePickerController
+- UIImagePickerControllerDelegate, UINavigationControllerDelegate
+- UUID
+- NSObject
+
+- [ ] Add a second UIAlertController that gets shown when the user taps a picture, asking them whether they want to rename the person or delete them.
+- [ ] Try using picker.sourceType = .camera when creating your image picker, which will tell it to create a new image by taking a photo.
+- [ ] Modify project 1 so that it uses a collection view controller rather than a table view controller.
