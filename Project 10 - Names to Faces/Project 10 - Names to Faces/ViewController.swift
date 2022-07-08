@@ -13,9 +13,10 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
-        
-        
+        navigationItem.leftBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson)),
+            UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(addNewPersonWithCamera))
+        ]
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -45,6 +46,14 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         let picker = UIImagePickerController()
         picker.allowsEditing = true
         picker.delegate = self
+        present(picker, animated: true)
+    }
+    
+    @objc func addNewPersonWithCamera() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        picker.sourceType = .camera
         present(picker, animated: true)
     }
     
