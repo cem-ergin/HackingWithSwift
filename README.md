@@ -432,6 +432,12 @@ Project 10, Names to Faces is completed.
 - UUID
 - NSObject
 
-- [ ] Add a second UIAlertController that gets shown when the user taps a picture, asking them whether they want to rename the person or delete them.
-- [ ] Try using picker.sourceType = .camera when creating your image picker, which will tell it to create a new image by taking a photo.
-- [ ] Modify project 1 so that it uses a collection view controller rather than a table view controller.
+- [x] Add a second UIAlertController that gets shown when the user taps a picture, asking them whether they want to rename the person or delete them.<br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/ee16e7414303f9d95f464a5185019b45e0021883)<br>
+<img src = "https://user-images.githubusercontent.com/30066961/177992975-637d9ce6-fe8c-4ae6-a626-c5b5b1d038b2.png" width = 30%>
+- [x] Try using picker.sourceType = .camera when creating your image picker, which will tell it to create a new image by taking a photo.<br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/f8e48a58ccbcd53192c7c83dcfa8e5a1b193e57f)
+- [x] Modify project 1 so that it uses a collection view controller rather than a table view controller.<br>
+*I created a copy of project 1 and worked on that.* <br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/a9fb98507139e07f065b7ef35e5a2f4584f78df4)<br>
+<img src = "https://user-images.githubusercontent.com/30066961/177992326-dd629583-8d0e-4459-a1f7-dd51aa0d9039.gif" width = 30%>
