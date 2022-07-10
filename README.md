@@ -407,15 +407,18 @@ Milestone Project 7-9 Hangman created
 
 WORK-IN-PROGRESS: Milestone Project 7-9 Hangman 
 
-## 2022-07-03 MON
+## 2022-07-03 SUN
+
+Day off
+## 2022-07-04 MON
 
 Day off
 
-## 2022-07-04 TUE
+## 2022-07-05 TUE
 
 Milestone Project 7-9 Hangman is done
 
-## 2022-07-04 WED
+## 2022-07-06 WED
 
 Project 10, Names to Faces is created.
 
@@ -423,7 +426,7 @@ Project 10, Names to Faces is created.
 - UICollectionViewController
 - UICollectionViewCell
 
-## 2022-07-05 THU
+## 2022-07-07 THU
 
 Project 10, Names to Faces is completed.
 
@@ -431,6 +434,10 @@ Project 10, Names to Faces is completed.
 - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 - UUID
 - NSObject
+
+## 2022-07-08 FRI
+
+Project 10 Challenges completed:
 
 - [x] Add a second UIAlertController that gets shown when the user taps a picture, asking them whether they want to rename the person or delete them.<br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/ee16e7414303f9d95f464a5185019b45e0021883)<br>
@@ -441,3 +448,28 @@ Project 10, Names to Faces is completed.
 *I created a copy of project 1 and worked on that.* <br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/a9fb98507139e07f065b7ef35e5a2f4584f78df4)<br>
 <img src = "https://user-images.githubusercontent.com/30066961/177992326-dd629583-8d0e-4459-a1f7-dd51aa0d9039.gif" width = 30%>
+
+## 2022-07-09 SAT
+
+Day off
+
+## 2022-07-10 SUN
+
+Day 45,46 and 47 => Project 11, Pachinko is completed without challenges.
+
+- SprikeKit
+- Physics
+- Making game with Swift
+
+*Challenges;*
+
+- [x] The pictures we’re using in have other ball pictures rather than just “ballRed”. Try writing code to use a random ball color each time they tap the screen.<br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/6cbde66d3576bb2d0cf14c404c169e016b1ab0a9)<br>
+- [x] Right now, users can tap anywhere to have a ball created there, which makes the game too easy. Try to force the Y value of new balls so they are near the top of the screen.<br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/7123ec748499238b127c6b4e5351092423ba5495)<br>
+- [ ] Give players a limit of five balls, then remove obstacle boxes when they are hit. Can they clear all the pins with just five balls? You could make it so that landing on a green slot gets them an extra ball.<br>
+*Work in Progress*
+<!-- <br>
+*I created a copy of project 1 and worked on that.* <br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/a9fb98507139e07f065b7ef35e5a2f4584f78df4)<br>
+<img src = "https://user-images.githubusercontent.com/30066961/177992326-dd629583-8d0e-4459-a1f7-dd51aa0d9039.gif" width = 30%> -->
