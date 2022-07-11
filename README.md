@@ -468,7 +468,7 @@ Day 45,46 and 47 => Project 11, Pachinko is completed without challenges.
 - [x] Right now, users can tap anywhere to have a ball created there, which makes the game too easy. Try to force the Y value of new balls so they are near the top of the screen.<br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/7123ec748499238b127c6b4e5351092423ba5495)<br>
 - [ ] Give players a limit of five balls, then remove obstacle boxes when they are hit. Can they clear all the pins with just five balls? You could make it so that landing on a green slot gets them an extra ball.<br>
-*Work in Progress*
+**Work in Progress**
 <!-- <br>
 *I created a copy of project 1 and worked on that.* <br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/a9fb98507139e07f065b7ef35e5a2f4584f78df4)<br>
