@@ -16,6 +16,7 @@
 		6F1A836E287AF86C0093F5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1A836C287AF86C0093F5A7 /* LaunchScreen.storyboard */; };
 		6F1A8395287B0FB60093F5A7 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F1A8393287B0FB60093F5A7 /* FireParticles.sks */; };
 		6F1A8396287B0FB60093F5A7 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F1A8394287B0FB60093F5A7 /* Contents.json */; };
+		6F1A8398287B85890093F5A7 /* SparkParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6F1A8397287B85890093F5A7 /* SparkParticles.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		6F1A836D287AF86C0093F5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F1A8393287B0FB60093F5A7 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 		6F1A8394287B0FB60093F5A7 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		6F1A8397287B85890093F5A7 /* SparkParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparkParticles.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				6F1A835D287AF8690093F5A7 /* AppDelegate.swift */,
 				6F1A835F287AF8690093F5A7 /* GameScene.sks */,
 				6F1A8363287AF8690093F5A7 /* GameScene.swift */,
+				6F1A8397287B85890093F5A7 /* SparkParticles.sks */,
 				6F1A8365287AF8690093F5A7 /* GameViewController.swift */,
 				6F1A8367287AF8690093F5A7 /* Main.storyboard */,
 				6F1A836A287AF86C0093F5A7 /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 				6F1A8360287AF8690093F5A7 /* GameScene.sks in Resources */,
 				6F1A8395287B0FB60093F5A7 /* FireParticles.sks in Resources */,
 				6F1A836B287AF86C0093F5A7 /* Assets.xcassets in Resources */,
+				6F1A8398287B85890093F5A7 /* SparkParticles.sks in Resources */,
 				6F1A836E287AF86C0093F5A7 /* LaunchScreen.storyboard in Resources */,
 				6F1A8396287B0FB60093F5A7 /* Contents.json in Resources */,
 			);
