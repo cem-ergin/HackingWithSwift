@@ -467,9 +467,10 @@ Day 45,46 and 47 => Project 11, Pachinko is completed without challenges.
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/6cbde66d3576bb2d0cf14c404c169e016b1ab0a9)<br>
 - [x] Right now, users can tap anywhere to have a ball created there, which makes the game too easy. Try to force the Y value of new balls so they are near the top of the screen.<br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/7123ec748499238b127c6b4e5351092423ba5495)<br>
-- [ ] Give players a limit of five balls, then remove obstacle boxes when they are hit. Can they clear all the pins with just five balls? You could make it so that landing on a green slot gets them an extra ball.<br>
-**Work in Progress**
-<!-- <br>
-*I created a copy of project 1 and worked on that.* <br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/a9fb98507139e07f065b7ef35e5a2f4584f78df4)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/177992326-dd629583-8d0e-4459-a1f7-dd51aa0d9039.gif" width = 30%> -->
+- [x] Give players a limit of five balls, then remove obstacle boxes when they are hit. Can they clear all the pins with just five balls? You could make it so that landing on a green slot gets them an extra ball.<br>
+[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/44ac65d8314e6d007f9c5e4e3044c1ace95011d4#diff-afa76676838402d96bb55fa108f475640de678588d4c102a90513e19fdc6f1fc)<br>
+*Challenge completed but this is not enough for me. So, the new challenges is:*
+- [ ] Initialize a home page
+- [ ] Add level system choosable from home page (easy, normal, hard)
+- [ ] Add an animation after ball hits green field indicating that is a good thing and you will get +1 ball because of that.
+- [ ] Add better alert dialogs. Not from UIKit. Something custom.
