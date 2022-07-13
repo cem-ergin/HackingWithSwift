@@ -454,6 +454,10 @@ Project 10 Challenges completed:
 Day off
 
 ## 2022-07-10 SUN
+## 2022-07-11 MON
+
+## 2022-07-12 TUE
+## 2022-07-13 WED
 
 Day 45,46 and 47 => Project 11, Pachinko is completed without challenges.
 
@@ -469,7 +473,8 @@ Day 45,46 and 47 => Project 11, Pachinko is completed without challenges.
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/7123ec748499238b127c6b4e5351092423ba5495)<br>
 - [x] Give players a limit of five balls, then remove obstacle boxes when they are hit. Can they clear all the pins with just five balls? You could make it so that landing on a green slot gets them an extra ball.<br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/44ac65d8314e6d007f9c5e4e3044c1ace95011d4#diff-afa76676838402d96bb55fa108f475640de678588d4c102a90513e19fdc6f1fc)<br>
-*Challenge completed but this is not enough for me. So, the new challenges is:*
+
+*Challenge completed but this is not enough for me. So, the new challenges is: (Wednesday)*
 - [ ] Initialize a home page
 - [ ] Add level system choosable from home page (easy, normal, hard)
 - [ ] Add an animation after ball hits green field indicating that is a good thing and you will get +1 ball because of that.
