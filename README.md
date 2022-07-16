@@ -479,3 +479,19 @@ Day 45,46 and 47 => Project 11, Pachinko is completed without challenges.
 - [ ] Add level system choosable from home page (easy, normal, hard)
 - [ ] Add an animation after ball hits green field indicating that is a good thing and you will get +1 ball because of that.
 - [ ] Add better alert dialogs. Not from UIKit. Something custom.
+
+## 2022-07-14 THU
+
+Day off
+
+## 2022-07-15 FRI
+
+Day off
+
+## 2022-07-16 SAT
+
+Day 48 - Project 12a completed.
+
+- NSCoding
+- UserDefaults
+- Creating decoder and encoder to classes inherits from NSCoding
