@@ -20,7 +20,13 @@ class DetailViewController: UIViewController {
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
         }
-        // Do any additional setup after loading the view.
+        
+        if let selectedImage = selectedImage {
+            let defaults = UserDefaults.standard
+            if let count = defaults.object(forKey: selectedImage) as? Int {
+                title = title! + " seen \(count) times"
+            }
+        }
     }
     
     

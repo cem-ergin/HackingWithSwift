@@ -18,7 +18,7 @@ class ViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-
+        
         performSelector(inBackground: #selector(getData), with: nil)
         
     }
@@ -48,7 +48,9 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            vc.selectedImage = pictures[indexPath.row]
+            let selectedImage = pictures[indexPath.row]
+            increaseCount(pictureKey: selectedImage)
+            vc.selectedImage = selectedImage
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -59,7 +61,14 @@ class ViewController: UITableViewController {
         vc.popoverPresentationController?.barButtonItem  = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
-
-
+    
+    func increaseCount(pictureKey: String) {
+        let defaults = UserDefaults.standard
+        if let count = defaults.object(forKey: pictureKey) as? Int {
+            defaults.set(count + 1, forKey: pictureKey)
+        } else {
+            defaults.set(1, forKey: pictureKey)
+        }
+    }
 }
 
