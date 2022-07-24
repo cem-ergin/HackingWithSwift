@@ -69,7 +69,11 @@ class ViewController: UIViewController {
             score -= 1
         }
         
-        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        if(saveScore(score: score)){
+            title = "New Record !!!"
+        }
+        
+        let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
         
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         
@@ -82,6 +86,26 @@ class ViewController: UIViewController {
             print("showScore handler")
         }))
         present(ac, animated: true)
+    }
+    
+    func saveScore(score: Int) -> Bool {
+        print("current score: \(score)")
+        
+        let userDefaults = UserDefaults.standard
+        let highestScoreKey = "highest_score"
+        
+        if let highestScore = userDefaults.object(forKey: highestScoreKey) as? Int {
+            print("highest score: \(highestScore)")
+
+            if (score > highestScore) {
+                userDefaults.set(score, forKey: highestScoreKey)
+                return true
+            }
+        } else {
+            userDefaults.set(score, forKey: highestScoreKey)
+        }
+        
+        return false
     }
 
 
