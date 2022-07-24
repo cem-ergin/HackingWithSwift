@@ -495,3 +495,16 @@ Day 48 - Project 12a completed.
 - NSCoding
 - UserDefaults
 - Creating decoder and encoder to classes inherits from NSCoding
+
+## 2022-07-24 SUN
+
+Day 49 - Project 12b completed.
+
+- Codable
+- NSCoding
+
+Challenges;
+- [ ] Modify project 1 so that it remembers how many times each storm image was shown – you don’t need to show it anywhere, but you’re welcome to try modifying your original copy of project 1 to show the view count as a subtitle below each image name in the table view.
+- [ ] Modify project 2 so that it saves the player’s highest score, and shows a special message if their new score beat the previous high score.
+- [ ] Modify project 5 so that it saves the current word and all the player’s entries to UserDefaults, then loads them back when the app launches.
+
