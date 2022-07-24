@@ -27,13 +27,30 @@ class ViewController: UITableViewController {
             allWords = ["silkworm"]
         }
         
-        startGame()
+        let userDefaults = UserDefaults.standard
+        if let word = userDefaults.object(forKey: "word") as? String {
+            startGameWithLocalData(storedTitle: word, storedUsedWords: userDefaults.object(forKey: "guessedWords") as? [String])
+        } else {
+            startGame()
+        }
     }
     
     @objc func startGame(){
         title = allWords.randomElement()
+        clearData()
+        saveData(word: title!)
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
+    }
+    
+    func startGameWithLocalData(storedTitle: String?, storedUsedWords: [String]?){
+        title = storedTitle
+        usedWords.removeAll(keepingCapacity: true)
+        if storedUsedWords != nil {
+            usedWords = storedUsedWords!
+        }
+        tableView.reloadData()
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,6 +108,7 @@ class ViewController: UITableViewController {
         usedWords.insert(answer, at: 0)
         let indexPath = IndexPath(row:0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
+        saveData(guessedWord: answer)
     }
     
     func isPossible(word: String) -> Bool {
@@ -130,6 +148,29 @@ class ViewController: UITableViewController {
         let ac = UIAlertController(title: title, message: description, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
+    }
+    
+    func saveData(guessedWord: String) {
+        let guessedWordsKey = "guessedWords"
+        
+        let userDefaults = UserDefaults.standard
+        if var guessedWords = userDefaults.object(forKey: guessedWordsKey) as? [String] {
+            guessedWords.append(guessedWord)
+            userDefaults.set(guessedWords, forKey: guessedWordsKey)
+        } else {
+            userDefaults.set([guessedWord], forKey: guessedWordsKey)
+        }
+    }
+    
+    func saveData(word: String) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(word, forKey: "word")
+    }
+    
+    func clearData () {
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: "word")
+        userDefaults.removeObject(forKey: "guessedWords")
     }
     
 }
