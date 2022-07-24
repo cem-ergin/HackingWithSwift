@@ -507,10 +507,10 @@ Challenges;
 - [x] Modify project 1 so that it remembers how many times each storm image was shown – you don’t need to show it anywhere, but you’re welcome to try modifying your original copy of project 1 to show the view count as a subtitle below each image name in the table view.<br>
 [Changes](
 https://github.com/cem-ergin/HackingWithSwift/commit/77b264c603f9cc99365d1e86e0362bcce7da1256)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/180661972-c92dd28a-5c3e-42bd-bcad-e2aec5f84cf1.gif" width = 30%>
+<img src = "https://user-images.githubusercontent.com/30066961/180661972-c92dd28a-5c3e-42bd-bcad-e2aec5f84cf1.gif" width = 30%><br>
 - [x] Modify project 2 so that it saves the player’s highest score, and shows a special message if their new score beat the previous high score.<br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/8b2a4b3e7fd5d24500c9bef7305ed6db89792bc0)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/180661863-419e46a8-d2d8-4bf6-94c3-126f5275d667.png" width = 30%>
+<img src = "https://user-images.githubusercontent.com/30066961/180661863-419e46a8-d2d8-4bf6-94c3-126f5275d667.png" width = 30%><br>
 - [x] Modify project 5 so that it saves the current word and all the player’s entries to UserDefaults, then loads them back when the app launches.<br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/79ceb37ec6537eaeda5ddd322b6ccaa13139946b)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/180668390-466e0e46-ce2c-4517-ac27-90c212c1f646.gif" width = 30%>
+<img src = "https://user-images.githubusercontent.com/30066961/180668390-466e0e46-ce2c-4517-ac27-90c212c1f646.gif" width = 30%><br>
