@@ -13,25 +13,7 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Pictures"
-        
-        
-        let userDefaults = UserDefaults.standard
-        if let savedPictures = userDefaults.object(forKey: "myPictures") as? Data {
-            print("saved pictures: \(savedPictures)")
-            for picture in savedPictures {
-                print(picture)
-            }
-            let jsonDecoder = JSONDecoder()
-            do {
-//                pictures = try jsonDecoder.decode([Picture].self, from: Picture)
-            } catch {
-                print("Failed to load pictures")
-            }
-        } else {
-            print("savedPictures are not available")
-        }
-
-        
+        loadData()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(takeImage))
     }
@@ -40,11 +22,51 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! PictureViewCell
         let picture = pictures[indexPath.row]
         let path = getDocumentsDirectory().appendingPathComponent(picture.imageName)
-
+        
         cell.myImageView.image = UIImage(contentsOfFile: path.path)
         cell.titleLabel.text = picture.imageName
         cell.captionLabel.text = picture.caption
+        
+        cell.addCaptionButton.setTitle("\(picture.caption.isEmpty ? "Add" : "Update") Caption", for: .normal)
+        cell.addCaptionButton.addTarget(self, action: #selector(addCaption), for: .touchUpInside)
+        cell.addCaptionButton.tag = indexPath.row
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            pictures.remove(at: indexPath.row)
+            updateDatabase()
+            loadData()
+        }
+    }
+    
+    @objc func addCaption(sender: UIButton) {
+        let isAdd = self.pictures[sender.tag].caption.isEmpty
+        
+        let ac = UIAlertController(title: "\(isAdd ? "Add" : "Update") Caption", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {
+            [weak ac] _ in
+            if let captionText = ac?.textFields?.first?.text {
+                self.pictures[sender.tag].caption = captionText
+                self.updateDatabase()
+                self.loadData()
+            }
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(okAction)
+        ac.addAction(cancelAction)
+        present(ac, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? PictureDetailViewController {
+            let imagePath = getDocumentsDirectory().appendingPathComponent(pictures[indexPath.item].imageName).path
+            vc.myImage = UIImage(contentsOfFile: imagePath)
+            vc.myTitle = pictures[indexPath.item].imageName
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,11 +90,23 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
             try? jpegData.write(to: imagePath)
         }
         
-        let picture = Picture(imageName: imageName)
-        pictures.append(picture)
+        let picture = Picture(imageName: imageName, caption: "")
         savePictureToDatabase(picture: picture)
+        loadData()
         dismiss(animated: true)
-        tableView.reloadData()
+    }
+    
+    func loadData() {
+        let userDefaults = UserDefaults.standard
+        if let savedPictures = userDefaults.object(forKey: "pics") as? Data {
+            do {
+                let jsonDecoder = JSONDecoder()
+                pictures = try jsonDecoder.decode([Picture].self, from: savedPictures)
+                tableView.reloadData()
+            } catch let error {
+                print("Failed to load pictures: \(error.localizedDescription)")
+            }
+        }
     }
     
     func getDocumentsDirectory() -> URL {
@@ -81,18 +115,29 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
     
     func savePictureToDatabase(picture: Picture) {
         let jsonEncoder = JSONEncoder()
-        let picturesKey = "pictures"
+        let jsonDecoder = JSONDecoder()
+        let picturesKey = "pics"
         
         let userDefaults = UserDefaults.standard
-        
-        if let encodedPicture = try? jsonEncoder.encode(picture) {
-//            if var pictureList = userDefaults.object(forKey: picturesKey) as? [Picture] {
-//                pictureList.append(picture)
-//                userDefaults.set(encodedPicture, forKey: picturesKey)
-//            } else {
-                userDefaults.set(encodedPicture, forKey: picturesKey)
-//            }
+        if let savedPictures = userDefaults.object(forKey: picturesKey) as? Data {
+            do {
+                var pictures = try jsonDecoder.decode([Picture].self, from: savedPictures)
+                pictures.append(picture)
+                userDefaults.set(try! jsonEncoder.encode(pictures), forKey: picturesKey)
+            } catch let error {
+                print("Failed to load pictures: \(error.localizedDescription)")
+            }
+        } else {
+            userDefaults.set(try! jsonEncoder.encode([picture]), forKey: picturesKey)
         }
+    }
+    
+    func updateDatabase() {
+        let jsonEncoder = JSONEncoder()
+        let picturesKey = "pics"
+        
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(try! jsonEncoder.encode(pictures), forKey: picturesKey)
     }
 }
 

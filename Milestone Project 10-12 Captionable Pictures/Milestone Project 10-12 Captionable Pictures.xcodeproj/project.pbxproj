@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F3366E6289564CC00F55B94 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3366E5289564CC00F55B94 /* Picture.swift */; };
 		6F3366EA28956D9500F55B94 /* PictureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3366E928956D9500F55B94 /* PictureViewCell.swift */; };
+		6F6DA6B22896A2090007521D /* PictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6DA6B12896A2080007521D /* PictureDetailViewController.swift */; };
 		6FF415EB289287C9004DFF50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF415EA289287C9004DFF50 /* AppDelegate.swift */; };
 		6FF415ED289287C9004DFF50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF415EC289287C9004DFF50 /* SceneDelegate.swift */; };
 		6FF415EF289287C9004DFF50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF415EE289287C9004DFF50 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		6F3366E5289564CC00F55B94 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		6F3366E928956D9500F55B94 /* PictureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewCell.swift; sourceTree = "<group>"; };
+		6F6DA6B12896A2080007521D /* PictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailViewController.swift; sourceTree = "<group>"; };
 		6FF415E7289287C9004DFF50 /* Milestone Project 10-12 Captionable Pictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone Project 10-12 Captionable Pictures.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF415EA289287C9004DFF50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FF415EC289287C9004DFF50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				6FF415F8289287CB004DFF50 /* Info.plist */,
 				6F3366E5289564CC00F55B94 /* Picture.swift */,
 				6F3366E928956D9500F55B94 /* PictureViewCell.swift */,
+				6F6DA6B12896A2080007521D /* PictureDetailViewController.swift */,
 			);
 			path = "Milestone Project 10-12 Captionable Pictures";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				6FF415EF289287C9004DFF50 /* ViewController.swift in Sources */,
 				6FF415EB289287C9004DFF50 /* AppDelegate.swift in Sources */,
 				6F3366EA28956D9500F55B94 /* PictureViewCell.swift in Sources */,
+				6F6DA6B22896A2090007521D /* PictureDetailViewController.swift in Sources */,
 				6FF415ED289287C9004DFF50 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

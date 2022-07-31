@@ -7,7 +7,10 @@
 import UIKit
 
 class PictureViewCell: UITableViewCell {
+    @IBOutlet var addCaptionButton: UIButton!
     @IBOutlet var myImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var captionLabel: UILabel!
+    
+    
 }
