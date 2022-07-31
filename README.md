@@ -514,3 +514,13 @@ https://github.com/cem-ergin/HackingWithSwift/commit/77b264c603f9cc99365d1e86e03
 - [x] Modify project 5 so that it saves the current word and all the player’s entries to UserDefaults, then loads them back when the app launches.<br>
 [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/79ceb37ec6537eaeda5ddd322b6ccaa13139946b)<br>
 <img src = "https://user-images.githubusercontent.com/30066961/180668390-466e0e46-ce2c-4517-ac27-90c212c1f646.gif" width = 30%><br>
+
+## 2022-07-31 SUN
+
+Day 50 - Milestone Project 10-12 completed.<br>
+
+[Changes](
+https://github.com/cem-ergin/HackingWithSwift/tree/master/Milestone%20Project%2010-12%20Captionable%20Pictures/Milestone%20Project%2010-12%20Captionable%20Pictures)<br>
+
+
+<img src = "https://media.giphy.com/media/g8aBybKVra6FJD2ZB8/giphy.gif" width = 30%><br>
