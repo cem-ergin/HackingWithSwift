@@ -524,3 +524,7 @@ https://github.com/cem-ergin/HackingWithSwift/tree/master/Milestone%20Project%20
 
 
 <img src = "https://media.giphy.com/media/g8aBybKVra6FJD2ZB8/giphy.gif" width = 30%><br>
+
+## 2022-08-07 SUN
+
+Day 52 completed.<br>
