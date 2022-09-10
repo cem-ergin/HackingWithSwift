@@ -287,7 +287,7 @@ label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, mu
 
 - [x] Create an app that lets people create a shopping list by adding items to a table view <br>
 
-<img src = "https://user-images.githubusercontent.com/30066961/175775215-edf2b5b2-0638-4d39-b5dd-f1ef82559ae1.png" width = 23%> <img src = "https://user-images.githubusercontent.com/30066961/175775194-365b4ecc-b79e-4da8-942d-52b43a0818ae.png" width = 23%> <img src = "https://user-images.githubusercontent.com/30066961/175775392-8353c06a-a17d-4fff-9930-7a6ea1c10305.png" width = 23%> 
+<img src = "https://user-images.githubusercontent.com/30066961/175775215-edf2b5b2-0638-4d39-b5dd-f1ef82559ae1.png" width = 23%> <img src = "https://user-images.githubusercontent.com/30066961/175775194-365b4ecc-b79e-4da8-942d-52b43a0818ae.png" width = 23%> <img src = "https://user-images.githubusercontent.com/30066961/175775392-8353c06a-a17d-4fff-9930-7a6ea1c10305.png" width = 23%>
 
 ## 2022-06-25 SAT
 
@@ -303,6 +303,7 @@ label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, mu
 [Go to Project 7 to see the challenge answers](https://github.com/cem-ergin/HackingWithSwift/tree/master/Project%207%20-%20Whitehouse%20Petitions)
 
 - [x] Add a Credits button to the top-right corner using UIBarButtonItem. When this is tapped, show an alert telling users the data comes from the We The People API of the Whitehouse.<br>
+
 ```swift
 let showInfoButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showInfo))
 
@@ -312,11 +313,14 @@ ac.addAction(UIAlertAction(title: "OK", style: .default))
 present(ac, animated: true)
 }
 ```
+
 - [x] Let users filter the petitions they see. This involves creating a second array of filtered items that contains only petitions matching a string the user entered. Use a UIAlertController with a text field to let them enter that string.<br>
+
 ```swift
 let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(filter))
 navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 ```
+
 ```swift
 @objc func filter() {
         let ac = UIAlertController(title: "Filter", message: "Type something to search", preferredStyle: .alert)
@@ -330,7 +334,7 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
         ac.addAction(UIAlertAction(title: "Cancel", style: .default))
         present(ac, animated: true)
     }
-    
+
     func filterData (filterString: String) {
         if(filterString.isEmpty){
             filteredPetitions = petitions
@@ -341,7 +345,7 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
         }
         reloadData()
     }
-    
+
     func reloadData () {
         navigationItem.leftBarButtonItem = filteredPetitions.count != petitions.count ? clearButton : nil
         tableView.reloadData()
@@ -370,14 +374,14 @@ navigationItem.rightBarButtonItems = [showInfoButton, searchButton]
 - performSelector function for easier DispatchQueue
 - Quality of Service
 
-#### Project 9 challenges; 
+#### Project 9 challenges;
 
 - [x] Modify project 1 so that loading the list of NSSL images from our bundle happens in the background.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-7bfa7821455e405526ec7e2f83264a155bee7a33e3e467b9cb06cbc078e73f38)
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-7bfa7821455e405526ec7e2f83264a155bee7a33e3e467b9cb06cbc078e73f38)
 - [x] Modify project 8 so that loading and parsing a level takes place in the background.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-4a2fa5dfffece5f3b4d5eb3a25ce6688ee39983c34e7664cfeec5304c0d53970)
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-4a2fa5dfffece5f3b4d5eb3a25ce6688ee39983c34e7664cfeec5304c0d53970)
 - [x] Modify project 7 so that your filtering code takes place in the background.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-dfa15ad23ceddd7486d986b7c1954ded248c0662c792244ca5b338c6235f2877)
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/acc7e3e59b95fa097c9934db1211c9f8060f3fae#diff-dfa15ad23ceddd7486d986b7c1954ded248c0662c792244ca5b338c6235f2877)
 
 ## 2022-06-27 MON
 
@@ -405,11 +409,12 @@ Milestone Project 7-9 Hangman created
 
 ## 2022-07-02 SAT
 
-WORK-IN-PROGRESS: Milestone Project 7-9 Hangman 
+WORK-IN-PROGRESS: Milestone Project 7-9 Hangman
 
 ## 2022-07-03 SUN
 
 Day off
+
 ## 2022-07-04 MON
 
 Day off
@@ -440,23 +445,25 @@ Project 10, Names to Faces is completed.
 Project 10 Challenges completed:
 
 - [x] Add a second UIAlertController that gets shown when the user taps a picture, asking them whether they want to rename the person or delete them.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/ee16e7414303f9d95f464a5185019b45e0021883)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/177992975-637d9ce6-fe8c-4ae6-a626-c5b5b1d038b2.png" width = 30%><br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/ee16e7414303f9d95f464a5185019b45e0021883)<br>
+      <img src = "https://user-images.githubusercontent.com/30066961/177992975-637d9ce6-fe8c-4ae6-a626-c5b5b1d038b2.png" width = 30%><br>
 - [x] Try using picker.sourceType = .camera when creating your image picker, which will tell it to create a new image by taking a photo.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/f8e48a58ccbcd53192c7c83dcfa8e5a1b193e57f)<br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/f8e48a58ccbcd53192c7c83dcfa8e5a1b193e57f)<br>
 - [x] Modify project 1 so that it uses a collection view controller rather than a table view controller.<br>
-*I created a copy of project 1 and worked on that.* <br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/a9fb98507139e07f065b7ef35e5a2f4584f78df4)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/177992326-dd629583-8d0e-4459-a1f7-dd51aa0d9039.gif" width = 30%>
+      _I created a copy of project 1 and worked on that._ <br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/a9fb98507139e07f065b7ef35e5a2f4584f78df4)<br>
+      <img src = "https://user-images.githubusercontent.com/30066961/177992326-dd629583-8d0e-4459-a1f7-dd51aa0d9039.gif" width = 30%>
 
 ## 2022-07-09 SAT
 
 Day off
 
 ## 2022-07-10 SUN
+
 ## 2022-07-11 MON
 
 ## 2022-07-12 TUE
+
 ## 2022-07-13 WED
 
 Day 45,46 and 47 => Project 11, Pachinko is completed without challenges.
@@ -465,16 +472,17 @@ Day 45,46 and 47 => Project 11, Pachinko is completed without challenges.
 - Physics
 - Making game with Swift
 
-*Challenges;*
+_Challenges;_
 
 - [x] The pictures we’re using in have other ball pictures rather than just “ballRed”. Try writing code to use a random ball color each time they tap the screen.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/6cbde66d3576bb2d0cf14c404c169e016b1ab0a9)<br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/6cbde66d3576bb2d0cf14c404c169e016b1ab0a9)<br>
 - [x] Right now, users can tap anywhere to have a ball created there, which makes the game too easy. Try to force the Y value of new balls so they are near the top of the screen.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/7123ec748499238b127c6b4e5351092423ba5495)<br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/7123ec748499238b127c6b4e5351092423ba5495)<br>
 - [x] Give players a limit of five balls, then remove obstacle boxes when they are hit. Can they clear all the pins with just five balls? You could make it so that landing on a green slot gets them an extra ball.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/44ac65d8314e6d007f9c5e4e3044c1ace95011d4#diff-afa76676838402d96bb55fa108f475640de678588d4c102a90513e19fdc6f1fc)<br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/44ac65d8314e6d007f9c5e4e3044c1ace95011d4#diff-afa76676838402d96bb55fa108f475640de678588d4c102a90513e19fdc6f1fc)<br>
 
-*Challenge completed but this is not enough for me. So, the new challenges is: (Wednesday)*
+_Challenge completed but this is not enough for me. So, the new challenges is: (Wednesday)_
+
 - [ ] Initialize a home page
 - [ ] Add level system choosable from home page (easy, normal, hard)
 - [ ] Add an animation after ball hits green field indicating that is a good thing and you will get +1 ball because of that.
@@ -504,24 +512,22 @@ Day 49 - Project 12b completed.
 - NSCoding
 
 Challenges;
+
 - [x] Modify project 1 so that it remembers how many times each storm image was shown – you don’t need to show it anywhere, but you’re welcome to try modifying your original copy of project 1 to show the view count as a subtitle below each image name in the table view.<br>
-[Changes](
-https://github.com/cem-ergin/HackingWithSwift/commit/77b264c603f9cc99365d1e86e0362bcce7da1256)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/180661972-c92dd28a-5c3e-42bd-bcad-e2aec5f84cf1.gif" width = 30%><br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/77b264c603f9cc99365d1e86e0362bcce7da1256)<br>
+      <img src = "https://user-images.githubusercontent.com/30066961/180661972-c92dd28a-5c3e-42bd-bcad-e2aec5f84cf1.gif" width = 30%><br>
 - [x] Modify project 2 so that it saves the player’s highest score, and shows a special message if their new score beat the previous high score.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/8b2a4b3e7fd5d24500c9bef7305ed6db89792bc0)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/180661863-419e46a8-d2d8-4bf6-94c3-126f5275d667.png" width = 30%><br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/8b2a4b3e7fd5d24500c9bef7305ed6db89792bc0)<br>
+      <img src = "https://user-images.githubusercontent.com/30066961/180661863-419e46a8-d2d8-4bf6-94c3-126f5275d667.png" width = 30%><br>
 - [x] Modify project 5 so that it saves the current word and all the player’s entries to UserDefaults, then loads them back when the app launches.<br>
-[Changes](https://github.com/cem-ergin/HackingWithSwift/commit/79ceb37ec6537eaeda5ddd322b6ccaa13139946b)<br>
-<img src = "https://user-images.githubusercontent.com/30066961/180668390-466e0e46-ce2c-4517-ac27-90c212c1f646.gif" width = 30%><br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/79ceb37ec6537eaeda5ddd322b6ccaa13139946b)<br>
+      <img src = "https://user-images.githubusercontent.com/30066961/180668390-466e0e46-ce2c-4517-ac27-90c212c1f646.gif" width = 30%><br>
 
 ## 2022-07-31 SUN
 
 Day 50 - Milestone Project 10-12 completed.<br>
 
-[Changes](
-https://github.com/cem-ergin/HackingWithSwift/tree/master/Milestone%20Project%2010-12%20Captionable%20Pictures/Milestone%20Project%2010-12%20Captionable%20Pictures)<br>
-
+[Changes](https://github.com/cem-ergin/HackingWithSwift/tree/master/Milestone%20Project%2010-12%20Captionable%20Pictures/Milestone%20Project%2010-12%20Captionable%20Pictures)<br>
 
 <img src = "https://media.giphy.com/media/g8aBybKVra6FJD2ZB8/giphy.gif" width = 30%><br>
 
@@ -539,6 +545,8 @@ Day 53 completed.<br>
 
 Challenges;
 
-- [ ] Try making the Save button show an error if there was no image in the image view.
+- [x] Try making the Save button show an error if there was no image in the image view.
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/d693655446ddf7c5941e798bc67ccdcad015d83e)<br>
+
 - [ ] Make the Change Filter button change its title to show the name of the currently selected filter.
 - [ ] Experiment with having more than one slider, to control each of the input keys you care about. For example, you might have one for radius and one for intensity.
