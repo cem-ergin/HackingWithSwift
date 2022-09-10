@@ -528,3 +528,11 @@ https://github.com/cem-ergin/HackingWithSwift/tree/master/Milestone%20Project%20
 ## 2022-08-07 SUN
 
 Day 52 completed.<br>
+
+## 2022-09-10 SUN
+
+Day 53 completed.<br>
+
+- Image filters
+- Input keys
+- CoreImage context
