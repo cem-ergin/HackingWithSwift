@@ -10,8 +10,10 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var intensity: UISlider!
     @IBOutlet var imageView: UIImageView!
-    
+    @IBOutlet var intensityLabel: UILabel!
+    @IBOutlet var changeFilterButton: UIButton!
     var currentImage: UIImage!
+    
     
     var context: CIContext!
     var currentFilter: CIFilter!
@@ -25,7 +27,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
-        
+
+        setFilterButtonTitle(filter: currentFilter)
+    }
+    
+    func setFilterButtonTitle(filter: CIFilter) {
+        changeFilterButton.setTitle("Change Filter\n(\(filter.name))", for: .normal)
     }
     
     @objc func importPicture() {
@@ -69,6 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         guard let actionTitle = action.title else { return }
         
         currentFilter = CIFilter(name: actionTitle)
+        setFilterButtonTitle(filter: currentFilter)
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
