@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var intensityLabel: UILabel!
     @IBOutlet var changeFilterButton: UIButton!
+    @IBOutlet var radiusSlider: UISlider!
     var currentImage: UIImage!
     
     
@@ -27,7 +28,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
-
+        
+        radiusSlider.isEnabled = false
+        
         setFilterButtonTitle(filter: currentFilter)
     }
     
@@ -104,17 +107,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func applyProcessing() {
         let inputKeys = currentFilter.inputKeys
-        
+        radiusSlider.isEnabled = false
+
         if inputKeys.contains(kCIInputIntensityKey) {
             currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
         }
         
         if inputKeys.contains(kCIInputRadiusKey) {
-            currentFilter.setValue(intensity.value * 200, forKey: kCIInputRadiusKey)
+            currentFilter.setValue(intensity.value * radiusSlider.value * 200, forKey: kCIInputRadiusKey)
+            radiusSlider.isEnabled = true
         }
         
         if inputKeys.contains(kCIInputScaleKey) {
-            currentFilter.setValue(intensity.value * 10, forKey: kCIInputScaleKey)
+            currentFilter.setValue(intensity.value, forKey: kCIInputScaleKey)
         }
         
         if inputKeys.contains(kCIInputCenterKey) {
