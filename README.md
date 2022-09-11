@@ -545,8 +545,11 @@ Day 53 completed.<br>
 
 Challenges;
 
-- [x] Try making the Save button show an error if there was no image in the image view.
+- [x] Try making the Save button show an error if there was no image in the image view.<br>
       [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/d693655446ddf7c5941e798bc67ccdcad015d83e)<br>
 
-- [ ] Make the Change Filter button change its title to show the name of the currently selected filter.
-- [ ] Experiment with having more than one slider, to control each of the input keys you care about. For example, you might have one for radius and one for intensity.
+- [x] Make the Change Filter button change its title to show the name of the currently selected filter.<br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/fb5ee833f91fe13411df49e66b7d75c02a6761a4)<br>
+
+- [x] Experiment with having more than one slider, to control each of the input keys you care about. For example, you might have one for radius and one for intensity.<br>
+      [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/f8e4373e43ee796cf234383d9a7100c3be00c3a2)<br>
