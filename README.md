@@ -553,3 +553,18 @@ Challenges;
 
 - [x] Experiment with having more than one slider, to control each of the input keys you care about. For example, you might have one for radius and one for intensity.<br>
       [Changes](https://github.com/cem-ergin/HackingWithSwift/commit/f8e4373e43ee796cf234383d9a7100c3be00c3a2)<br>
+
+## 2022-10-24 SAT
+
+Day 56 completed.<br>
+
+- animate(withDuration:)
+- UIView
+- CGAffineTransform
+
+Challenges;
+
+- [ ] Go back to project 8 and make the letter group buttons fade out when they are tapped. We were using the isHidden property, but you'll need to switch to alpha because isHidden is either true or false, it has no animatable values between.
+- [ ] Go back to project 13 and make the image view fade in when a new picture is chosen. To make this work, set the alpha to 0 first.
+- [ ] Go back to project 2 and make the flags scale down with a little bounce when pressed.
+
